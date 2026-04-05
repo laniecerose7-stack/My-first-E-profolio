@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laniece Rosario</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="index.js" defer></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "Alq2DnFYwtgZXCCDL",
+      });
+   })();
+</script>
+</head>
+<body>
+    <section id="landing-page" onmousemove="moveBackground(event)">
+        <nav>
+        <ul class="nav__link--list">
+            <li class="nav__link" onclick="toggleModal()">
+                <a href="#landing-page" class="nav__link--anchor link__hover-effect link__hover-effect-black">About</a>
+            </li>
+            <li class="nav__link">
+                <a href="#projects" class="nav__link--anchor link__hover-effect link__hover-effect-black">Projects</a>
+            </li>
+            <li class="nav__link" onclick="toggleModal()">
+                <a href="#contact" class="nav__link--anchor link__hover-effect link__hover-effect-black">Contact</a>
+            </li>
+            <li class="nav__link click" onclick="toggleContrast()">
+                <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect-black" aria-label="Toggle dark mode"><i class="fas fa-adjust"></i></a>
+            </li>
+        </ul>
+        </nav>
+        <header class="header">
+            <div class="header__content">
+                <h1 class="title"> Hello,</h1>
+                <h1 class=" title title--secondary">
+                    I'm <span class="blue">Laniece Rosario</span></h1>
+                <p class="header__para">
+                    I'm a Aspiring <strong class="blue">Frontend Software Engineer</strong> with a focus on frontend development and AI-related work.
+                     I build responsive web applications that are both visually appealing and highly functional. 
+                    I have a passion for learning new technologies and real-world problem solving.
+                    <br>
+                    Here's a bit more <strong class="blue">about me</strong>.
+                </p>
+                <div class="social__list">
+                    <a href="#" class="social__link click" aria-label="Visit my GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/feed/" target="_blank" class="social__link click" aria-label="Visit my LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social__link click" aria-label="Download my resume">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <a href="#">
+        <button class="mail__btn click" onclick="toggleModal()">
+            <i class="fa-solid fa-envelope"></i>
+        </button>
+        <a href="#projects" class="scroll">
+            <div class="scroll__icon click">
+
+            </div>
+        </a>
+        <div class="modal">
+            <div class="modal__half modal__about">
+                <h3 class="modal__title" onclick="toggleModal()">Here's a bit about me</h3>
+                <h4 class="modal__sub-title modal__sub-title--about">Frontend Software Engineer</h4>
+                <p class="modal__para">I'm 26 year old <b class="blue">frontend software engineer</b> with a passion for creating beautiful and functional web applications.
+                <br>
+                Learning skills from a team of experienced software engineers has allowed me to currently work on <b class="blue">extremely difficult</b> engineering problems and projects.
+            </p>
+                <div class="modal__languages">
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5 Logo">
+                        <span class="language__name">HTML</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript Logo">
+                        <span class="language__name">JS</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3 Logo">
+                        <span class="language__name">CSS</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Logo">
+                        <span class="language__name">React</span>
+                    </figure>
+                </div>
+            </div>
+            <div class="modal__half modal__contact">
+                <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+                <h3 class="modal__sub-title modal__sub-title--contact">
+                 Let's have a chat
+                </h3>
+                <h3 class="modal__sub-title modal__sub-title--contacts">
+                    I'm currently open to new opportunities
+                </h3>
+                <form id="contact__form" onsubmit="contact(event)">
+                    <div class="form__item">
+                    <label class="form__item--label">Name</label>
+                <input class="input" name="user_name" type="text" required>        
+                           </div>
+            <div class="form__item">
+                    <label class="form__item--label">Email</label>
+                <input class="input" name="user_email" type="email" required>
+                </div>
+                <div class="form__item">
+                    <label class="form__item--label">Message</label>
+                    <textarea class="input" name="user_message" required></textarea>
+                </div>
+                <button id="contact__submit" class="form__submit">
+                    Send it my way
+                </button>
+                </form>
+            <div class="modal__overlay modal__overlay--loading">
+                <i class="fas fa-spinner fa-spin"></i>
+            </div>
+            <div class="modal__overlay modal__overlay--success">
+                Thanks for the message! Looking forward to speaking to you soon.
+            </div>
+            </div>
+        </div>
+        <img src="./assets/semi circle.svg" class="shape shape--0">
+        <img src="./assets/squiggly.svg" class="shape shape--1">
+        <img src="./assets/circle.svg" class="shape shape--2">
+        <img src="./assets/triangle.svg" class="shape shape--3">
+        <img src="./assets/circle.svg" class="shape shape--4">
+        <img src="./assets/squiggly.svg" class="shape shape--5">
+        <img src="./assets/semi circle.svg" class="shape shape--6">
+        <img src="./assets/circle.svg" class="shape shape--7">
+        <img src="./assets/semi circle.svg" class="shape shape--8">
+    </section>
+    <section id="projects">
+        <div class="container">
+            <div class="row">
+                <h1 class="section__title">
+                    Here are some of my <span class="blue">projects</span>
+                </h1>
+                <ul class="projects__list">
+                    <li class="project">
+                    <div class="project__wrapper">
+                        <img src="./assets/blinker mockup.png" class="project__img" alt="Car Sales Project">
+                        <div class="project__wrapper--bg"></div>
+                        <div class="project__description">
+                            <h3 class="project__description--title">
+                                Car Sales Projects
+                            </h3>
+                            <h4 class="project__description--sub-title">
+                                Html, Css. Javascript, Vue, Vuex
+                            </h4>  
+                            <p class="project__description--para">
+                                lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptate.
+                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptate. 
+                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptate.
+                            </p>
+                        <div class="project__description--links">
+                            <a href="#" class="project__description--link">
+                                <i class="fas fa-link">
+
+                                </i>
+                            </a>
+                        </div>
+                        </div>
+                    </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer id="contact">
+        <div class="container">
+            <div class="row footer__row">
+            <div class="footer__social--list">
+                                <a href="#landing-page" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                ">
+                            About
+            </a>
+                            <a href="#projects" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                ">
+                            Projects
+            </a>
+                            <a href="https://www.linkedin.com/feed/" target="_blank" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                ">
+             LinkedIn
+            </a>
+                            <a href="#contact"  onclick= "toggleModal()"class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                ">
+             Contact
+            </a>
+              <a href="#" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                ">
+              Resume
+            </a>
+            </div>
+            <div class="footer__copyright">Copyright © 2026 Laniece Rosario. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
